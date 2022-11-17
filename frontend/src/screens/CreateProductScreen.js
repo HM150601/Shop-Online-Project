@@ -10,7 +10,6 @@ import axios from "axios";
 
 const CreateProductScreen = () => {
   const dispatch = useDispatch();
-  // let navigate = useNavigate();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [brand, setBrand] = useState("");
@@ -23,12 +22,6 @@ const CreateProductScreen = () => {
   const { loading, success, error } = useSelector(
     (state) => state.productCreate
   );
-
-  // useEffect(() => {
-  //   if (success) {
-  //     navigate("/admin/products");
-  //   }
-  // }, [dispatch, success]);
 
   useEffect(() => {
     const navigate = () => {

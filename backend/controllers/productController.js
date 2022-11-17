@@ -56,7 +56,7 @@ export const createProduct = asyncHandler(async (req, res) => {
     category: req.body.category,
     countInStock: req.body.countInStock,
     numReviews: 0,
-    image: req.body.image || "/images/simple.jpg",
+    image: req.body.image || "/images/blue-shirt.jpeg",
     user: req.user._id,
   });
 
@@ -79,7 +79,7 @@ export const updateProduct = asyncHandler(async (req, res) => {
     product.category = req.body.category;
     product.countInStock = req.body.countInStock;
     product.numReviews = req.body.numReviews;
-    product.image = req.body.image || "/images/simple.jpg";
+    product.image = req.body.image || "/images/blue-shirt.jpeg" ;
 
     const updatedProduct = await product.save();
 
