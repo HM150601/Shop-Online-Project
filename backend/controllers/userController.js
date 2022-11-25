@@ -76,6 +76,33 @@ export const registerUser = asyncHandler(async (req, res) => {
   });
 });
 
+// @Desc Forget user
+// @Route /api/users/forget
+// @Method POST
+export const forgetUser = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+
+  const userExist = await User.findOne({ email });
+
+  if (userExist) {
+    res.status(401);
+    throw new Error("User already exist");
+  }
+
+  const user = await User.create({ email, password });
+
+  res.status(201).json({
+    success: true,
+    user: {
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      token: generateToken(user._id),
+    },
+  });
+});
+
 // @Desc Update profile
 // @Route /api/users/profile
 // @Method PUT

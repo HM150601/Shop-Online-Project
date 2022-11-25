@@ -7,6 +7,7 @@ import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
+import ForgetScreen from "./screens/ForgetScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import ProtectedRoute from "./components/ProtectedRoute";
 import OnlyAdmin from "./components/OnlyAdmin";
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/login" element={<LoginScreen />} />
             <Route path="/register" element={<RegisterScreen />} />
+            <Route path="/forget" element={<ForgetScreen />} />
             <Route path="/profile" element={<ProtectedRoute />}>
               <Route path="/profile" element={<ProfileScreen />} />
             </Route>
