@@ -7,7 +7,6 @@ import Loading from "../components/Loading";
 import Message from "../components/Message";
 import Meta from "../components/Meta";
 import { register } from "../redux/actions/userActions";
-import { signInWithGoogle } from "../firebase";
 
 const RegisterScreen = () => {
   let navigate = useNavigate();
@@ -54,7 +53,7 @@ const RegisterScreen = () => {
             <Form.Control
               type="text"
               placeholder="Full Name"
-              value={localStorage.getItem("googleName")}
+              value={name}
               onChange={(e) => setName(e.target.value)}
             ></Form.Control>
           </Form.Group>
@@ -63,7 +62,7 @@ const RegisterScreen = () => {
             <Form.Control
               type="email"
               placeholder="Email"
-              value={localStorage.getItem("googleEmail")}
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             ></Form.Control>
           </Form.Group>
