@@ -126,20 +126,58 @@ const EditProductScreen = () => {
           <Form.Group controlId="brand" className="mt-3">
             <Form.Label>Brand</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Brand"
+              as="select"
               value={brand}
               onChange={(e) => setBrand(e.target.value)}
-            ></Form.Control>
+            >
+              <option value="Levi">Levi</option>
+              <option value="Amazon Essentials">Amazon Essentials</option>
+              <option value="Carhartt Store">Carhartt Store</option>
+              <option value="Fruit of the Loom">Fruit of the Loom</option>
+              <option value="Alberto Nardoni">Alberto Nardoni</option>
+              <option value="Lucky Brand">Lucky Brand</option>
+              <option value="DC Comics">DC Comics</option>
+              <option value="J.Ver">J.Ver</option>
+              <option value="Wrangler">Wrangler</option>
+              <option value="QIMYUM">QIMYUM</option>
+              </Form.Control>
           </Form.Group>
           <Form.Group controlId="category" className="mt-3">
             <Form.Label>Category</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Category"
+              as="select"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-            ></Form.Control>
+            >
+              <option value="Sweater">Sweater</option>
+              <option value="Dress">Dress</option>
+              <option value="Hoodies">Hoodies</option>
+              <option value="T-shirt">T-shirt</option>
+              <option value="Flip-flops">Flip-flops</option>
+              <option value="Shorts">Shorts</option>
+              <option value="Skirt">Skirt</option>
+              <option value="Skirt">Skirt</option>
+              <option value="Jeans">Jeans</option>
+              <option value="Shoes">Shoes</option>
+              <option value="Coat">Coat</option>
+              <option value="High heels">High heels</option>
+              <option value="Suit">Suit</option>
+              <option value="Cap">Cap</option>
+              <option value="Socks">Socks</option>
+              <option value="Shirt">Shirt</option>
+              <option value="Bra">Bra</option>
+              <option value="Scarf">Scarf</option>
+              <option value="Swimsuit">Swimsuit</option>
+              <option value="Hat">Hat</option>
+              <option value="Gloves">Gloves</option>
+              <option value="Jacket">Jacket</option>
+              <option value="Long coat">Long coat</option>
+              <option value="Boots">Boots</option>
+              <option value="Sunglasses">Sunglasses</option>
+              <option value="Tie">Tie</option>
+              <option value="Polo shirt">Polo shirt</option>
+              <option value="Leather jacket">Leather jacket</option>
+              </Form.Control>
           </Form.Group>
           <Form.Group controlId="price" className="mt-3">
             <Form.Label>Price</Form.Label>
