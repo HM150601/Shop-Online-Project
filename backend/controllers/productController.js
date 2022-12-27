@@ -1,3 +1,4 @@
+import { request } from "express";
 import asyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
 
@@ -5,7 +6,7 @@ import Product from "../models/productModel.js";
 // @ROUTE /api/products
 // @METHOD GET
 export const getAll = asyncHandler(async (req, res) => {
-  const pageSize = 6;
+  const pageSize = 8;
   const page = Number(req.query.pageNumber) || 1;
 
   const keyword = req.query.keyword
@@ -79,7 +80,7 @@ export const updateProduct = asyncHandler(async (req, res) => {
     product.category = req.body.category;
     product.countInStock = req.body.countInStock;
     product.numReviews = req.body.numReviews;
-    product.image = req.body.image || "/images/blue-shirt.jpeg" ;
+    product.image = request.file ? request.file.path : '' || "/images/ellese-hoodie.jpg" ;
 
     const updatedProduct = await product.save();
 
@@ -136,13 +137,14 @@ export const createProductReview = asyncHandler(async (req, res) => {
 // @Route /api/products/:id
 // @Method DELETE
 export const deleteProduct = asyncHandler(async (req, res) => {
-  let product = await Product.findByIdAndRemove(req.params.id);
+  let product = await Product.findById(req.params.id);
+
   if (!product) {
     res.status(401);
     throw new Error("Product not found");
   }
 
-  await Product.findByIdAndRemove(req.params.id);
+  await product.remove();
 
   res.status(201).json({ message: "Product deleted" });
 });
